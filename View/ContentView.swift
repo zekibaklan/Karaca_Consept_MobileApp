@@ -9,10 +9,19 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-      CardView()
+        VStack {
+            ImageView()
+             
+            Spacer()
+        }
     }
 }
 
 #Preview {
-    ContentView()
+
+        ContentView()
+        
+        
+  
+  
 }
