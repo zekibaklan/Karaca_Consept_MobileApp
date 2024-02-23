@@ -7,24 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5B4E69332B49AFB2007070A3 /* CustomBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E69322B49AFB2007070A3 /* CustomBackground.swift */; };
-		5B4E69352B49B65E007070A3 /* CookingInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E69342B49B65E007070A3 /* CookingInfoView.swift */; };
+		5B1D3B892B8950E600D88295 /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1D3B882B8950E600D88295 /* RecipeDetailView.swift */; };
+		5B3E6A452B4A37F800939BE9 /* CookingInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3E6A442B4A37F800939BE9 /* CookingInfoView.swift */; };
+		5BA4D90F2B7D358C00AA9C48 /* RecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA4D90E2B7D358C00AA9C48 /* RecipeModel.swift */; };
+		5BA4D9122B7D366900AA9C48 /* RecipeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA4D9112B7D366900AA9C48 /* RecipeData.swift */; };
 		5BA58A002B49AEE2000C5DAD /* KaracaAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA589FF2B49AEE2000C5DAD /* KaracaAppApp.swift */; };
 		5BA58A022B49AEE2000C5DAD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA58A012B49AEE2000C5DAD /* ContentView.swift */; };
 		5BA58A042B49AEE3000C5DAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BA58A032B49AEE3000C5DAD /* Assets.xcassets */; };
 		5BA58A072B49AEE3000C5DAD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BA58A062B49AEE3000C5DAD /* Preview Assets.xcassets */; };
-		5BA58A0F2B49AEF1000C5DAD /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA58A0E2B49AEF1000C5DAD /* ImageView.swift */; };
+		5BA58A0F2B49AEF1000C5DAD /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA58A0E2B49AEF1000C5DAD /* RecipeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5B4E69322B49AFB2007070A3 /* CustomBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackground.swift; sourceTree = "<group>"; };
-		5B4E69342B49B65E007070A3 /* CookingInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingInfoView.swift; sourceTree = "<group>"; };
+		5B1D3B882B8950E600D88295 /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
+		5B3E6A442B4A37F800939BE9 /* CookingInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingInfoView.swift; sourceTree = "<group>"; };
+		5BA4D90E2B7D358C00AA9C48 /* RecipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeModel.swift; sourceTree = "<group>"; };
+		5BA4D9112B7D366900AA9C48 /* RecipeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeData.swift; sourceTree = "<group>"; };
 		5BA589FC2B49AEE2000C5DAD /* KaracaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KaracaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BA589FF2B49AEE2000C5DAD /* KaracaAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaracaAppApp.swift; sourceTree = "<group>"; };
 		5BA58A012B49AEE2000C5DAD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5BA58A032B49AEE3000C5DAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5BA58A062B49AEE3000C5DAD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		5BA58A0E2B49AEF1000C5DAD /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		5BA58A0E2B49AEF1000C5DAD /* RecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,12 +42,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B3E6A462B4A487B00939BE9 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				5BA4D9112B7D366900AA9C48 /* RecipeData.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		5BA4D9102B7D365900AA9C48 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5BA4D90E2B7D358C00AA9C48 /* RecipeModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		5BA589F32B49AEE2000C5DAD = {
 			isa = PBXGroup;
 			children = (
 				5BA589FE2B49AEE2000C5DAD /* KaracaApp */,
-				5BA58A102B49AF13000C5DAD /* Component */,
 				5BA58A0D2B49AEE7000C5DAD /* View */,
+				5B3E6A462B4A487B00939BE9 /* Data */,
+				5BA4D9102B7D365900AA9C48 /* Model */,
 				5BA589FD2B49AEE2000C5DAD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -78,19 +99,11 @@
 			isa = PBXGroup;
 			children = (
 				5BA58A012B49AEE2000C5DAD /* ContentView.swift */,
-				5BA58A0E2B49AEF1000C5DAD /* ImageView.swift */,
-				5B4E69342B49B65E007070A3 /* CookingInfoView.swift */,
+				5BA58A0E2B49AEF1000C5DAD /* RecipeView.swift */,
+				5B1D3B882B8950E600D88295 /* RecipeDetailView.swift */,
+				5B3E6A442B4A37F800939BE9 /* CookingInfoView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		5BA58A102B49AF13000C5DAD /* Component */ = {
-			isa = PBXGroup;
-			children = (
-				5B4E69322B49AFB2007070A3 /* CustomBackground.swift */,
-			);
-			name = Component;
-			path = KaracaApp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,10 +176,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B4E69332B49AFB2007070A3 /* CustomBackground.swift in Sources */,
-				5B4E69352B49B65E007070A3 /* CookingInfoView.swift in Sources */,
+				5B1D3B892B8950E600D88295 /* RecipeDetailView.swift in Sources */,
+				5B3E6A452B4A37F800939BE9 /* CookingInfoView.swift in Sources */,
 				5BA58A022B49AEE2000C5DAD /* ContentView.swift in Sources */,
-				5BA58A0F2B49AEF1000C5DAD /* ImageView.swift in Sources */,
+				5BA4D90F2B7D358C00AA9C48 /* RecipeModel.swift in Sources */,
+				5BA58A0F2B49AEF1000C5DAD /* RecipeView.swift in Sources */,
+				5BA4D9122B7D366900AA9C48 /* RecipeData.swift in Sources */,
 				5BA58A002B49AEE2000C5DAD /* KaracaAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

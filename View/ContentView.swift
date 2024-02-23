@@ -8,13 +8,35 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    var recipes: [Recipe] = recipesData
+    
     var body: some View {
-        VStack {
-            ImageView()
+        
+        
+        
+        
+            
+            NavigationView {
+                
              
-            Spacer()
-        }
+                ScrollView {
+                    
+                        VStack(alignment: .center, spacing: 20) {
+                          ForEach(recipes) { item in
+                            RecipeView(recipe: item)
+                                 
+                          }
+                        }
+                
+                        .padding(.horizontal)
+                    
+                }
+                .navigationBarTitle("#LezzetinizeSağlık Dedirtecek Tarifler")
+                .navigationBarTitleDisplayMode(.inline)
+            }
     }
+     
 }
 
 #Preview {

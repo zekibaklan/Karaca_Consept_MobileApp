@@ -8,12 +8,12 @@
 import SwiftUI
 
 
-struct ImageView: View {
+struct RecipeView: View {
    
     
     var recipe: Recipe
-     
-  
+    @State private var showModal: Bool = false
+    var hapticImpact = UIImpactFeedbackGenerator(style: .heavy)
    
     var body: some View {
         
@@ -25,16 +25,13 @@ struct ImageView: View {
                 Image(recipe.cookingImage)
                 .resizable()
                 .scaledToFit()
-                
-             
-       
                 .clipShape(CornerShape(cornerRadius: 75, isLeft: recipe.index % 2 == 0))
                 .overlay(
                     
                     HStack {
                         Spacer()
                         VStack {
-                            Image(systemName: "info.circle")
+                            Image(systemName: "bookmark")
                                 .font(Font.title.weight(.light))
                                 .foregroundColor(.white)
                                 .imageScale(.small)
@@ -63,11 +60,6 @@ struct ImageView: View {
                 // HEADLINE
                 CookingInfoView(recipe: recipe)
                     .padding(.vertical,8)
-                
-                //RATES
-          
-                
-                //COOKING
                
                 
             }
@@ -78,6 +70,13 @@ struct ImageView: View {
         .background(.white)
         .cornerRadius(12)
         .shadow(color: .black, radius: 8, x: 0, y: 5)
+        .onTapGesture {
+          self.hapticImpact.impactOccurred()
+          self.showModal = true
+        }
+        .sheet(isPresented: self.$showModal) {
+          RecipeDetailView(recipe: self.recipe)
+        }
        
 //        .onTapGesture {
 ////            hapticImpact.impactOccurred()
@@ -93,7 +92,7 @@ struct CardView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
             
-            ImageView(recipe: recipesData[0])
+            RecipeView(recipe: recipesData[0])
                
                 
         }
