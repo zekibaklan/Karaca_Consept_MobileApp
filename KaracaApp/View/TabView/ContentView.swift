@@ -19,7 +19,7 @@ struct ContentView: View {
     var body: some View {
         
         ZStack {
-            
+            if shop.showingProduct == false && shop.selectedProduct == nil {
                 VStack(spacing: 0) {
                     NavigationBarView()
                         .padding(.horizontal, 15)
@@ -58,19 +58,19 @@ struct ContentView: View {
                 TitleView(title: "Ürünler")
                         
                         LazyVGrid(columns: gridLayout, spacing: 15, content: {
-                            ForEach(products) { product in
-                                ProductItemView(product: product)
-//                       .onTapGesture {
-//                                        feedback.impactOccurred()
-//                                        
-//                                        withAnimation(.easeOut) {
-//                                            shop.selectedProduct = product
-//                                            shop.showingProduct = true
-//                                        }
-//                                    }
-                            } //: LOOP
+                          ForEach(products) { product in
+                            ProductItemView(product: product)
+                              .onTapGesture {
+                                feedback.impactOccurred()
+                                
+                                withAnimation(.easeOut) {
+                                  shop.selectedProduct = product
+                                  shop.showingProduct = true
+                                }
+                              }
+                          } //: LOOP
                         }) //: GRID
-                        .padding(15)
+                          .padding(15)
                         TitleView(title: "Markalar")
                         
                         
@@ -84,9 +84,11 @@ struct ContentView: View {
                     
                 }
             
-          
+            } else {
+              ProductDetailView()
+            }
             
-        }
+        } // ZSTACK
         .ignoresSafeArea(.all, edges: .top)
         
     }
