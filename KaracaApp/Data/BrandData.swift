@@ -40,6 +40,9 @@ let brandData: [Brand] = [
     Brand(
         id: 10,
         image: "marka10"),
+    Brand(
+        id: 11,
+        image: "marka11")
     
 
 
