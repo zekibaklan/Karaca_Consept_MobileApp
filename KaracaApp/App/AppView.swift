@@ -16,26 +16,38 @@ struct AppView: View {
     var body: some View {
         TabView {
             
-            KaracaView()
-              .tabItem({
-                Image(systemName: "book")
-                Text("Anasayfa")
-                      .tag(0)
-              })
+            
             ContentView()
               .tabItem({
              
-                Image(systemName: "cart.badge.plus")
-                Text("Mağaza")
+                Image(systemName: "house")
+                Text("Anasayfa")
                       .tag(1)
               })
 
+            MapView()
+              .tabItem({
+             
+                Image(systemName: "location")
+                Text("Harita")
+                      .tag(1)
+              })
             RecipeView()
               .tabItem({
              
                 Image(systemName: "fork.knife")
                 Text("Tarifler")
                       .tag(1)
+              })
+            CartView()
+              .tabItem({
+                  ZStack {
+                      Image(systemName: "cart.badge.plus")
+                     
+                         Circle()
+                  }
+                Text("Mağaza")
+                      .tag(0)
               })
             
               

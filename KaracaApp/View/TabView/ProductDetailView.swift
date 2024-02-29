@@ -12,13 +12,13 @@ struct ProductDetailView: View {
     // MARK: - PROPERTY
     let sampleProduct: Product = productData[0]
     @EnvironmentObject var shop: Shop
-    
+    var product : Product
     // MARK: - BODY
     
     var body: some View {
       VStack(alignment: .leading, spacing: 5, content: {
         // NAVBAR
-        NavigationBarDetailView()
+        CustomBackButton()
           .padding(.horizontal)
           .padding(.top, UIApplication.shared.windows.first?.safeAreaInsets.top)
 
@@ -49,11 +49,11 @@ struct ProductDetailView: View {
               QuantityFavouriteDetailView()
                 .padding(.vertical, 10)
               
-              // ADD TO CART
-              AddToCartDetailView()
-                .padding(.bottom, 20)
+              
           }) //: SCROLL
-         
+            // ADD TO CART
+            AddToCartDetailView( product: sampleProduct)
+              .padding(.bottom, 20)
         }) //: VSTACK
         .padding(.horizontal)
         .background(
@@ -73,7 +73,7 @@ struct ProductDetailView: View {
 }
 
 #Preview {
-    ProductDetailView()
+    ProductDetailView(product: productData[1])
         .environmentObject(Shop())
         .previewLayout(.fixed(width: 375, height: 812))
         .background(Color.gray)

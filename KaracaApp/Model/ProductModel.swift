@@ -11,9 +11,9 @@ struct Product: Codable, Identifiable {
   let id: Int
   let name: String
   let image: String
-  let price: Double
+  let price: Int 
   let description: String
 
   
-  var formattedPrice: String { return "\(price) TL" }
+  var formattedPrice: String { return "\(price)₺" }
 }

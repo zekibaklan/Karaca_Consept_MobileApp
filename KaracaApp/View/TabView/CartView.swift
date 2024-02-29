@@ -8,11 +8,51 @@
 import SwiftUI
 
 struct CartView: View {
+    @EnvironmentObject var shop: Shop
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            if shop.paymentSuccess {
+                CompletedView()
+            } else {
+                if shop.shopProduct.count > 0 {
+                    ScrollView {
+                        ForEach(shop.shopProduct, id: \.id) { product in
+                            ProductRow(product: product)
+                        }
+                        HStack {
+                            Text("Your cart total is ")
+                            Spacer()
+                            Text("\((shop.total))₺").bold()
+                        }
+                        .padding()
+                        Spacer()
+                        PaymentButton(action: {
+                            shop.pay()
+                        })
+                        .padding()
+                    
+                                  
+                                }
+                    
+                    .padding(.top)
+                }
+                else {
+
+                   EmptyScreenView()
+                }
+            }
+        }
+        .onDisappear {
+            if shop.paymentSuccess {
+                shop.paymentSuccess = false
+            }
+        }
     }
 }
 
-#Preview {
-    CartView()
+struct CartView_Previews: PreviewProvider {
+    static var previews: some View {
+        CartView().environmentObject(Shop())
+    }
 }

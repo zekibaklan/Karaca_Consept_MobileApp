@@ -6,17 +6,26 @@
 //
 
 import SwiftUI
-
+import MapKit
 struct NavigationBarView: View {
     @State private var isAnimated: Bool = false
-    
+
+    var numberOfProducts : Int
     // MARK: - BODY
     
     var body: some View {
      
       HStack {
         Button(action: {}, label: {
-          Image(systemName: "magnifyingglass")
+          Image(systemName: "location.north.fill")
+                .resizable()
+                .frame(width: 20, height: 20)
+                .padding(.trailing)
+            
+           
+            
+            
+          
             .font(.title)
             .foregroundColor(.black)
         }) //: BUTTON
@@ -37,22 +46,22 @@ struct NavigationBarView: View {
         
         Spacer()
         
-        Button(action: {}, label: {
-          ZStack {
-            Image(systemName: "cart")
-              .font(.title)
-              .foregroundColor(.black)
-            
-            Circle()
-              .fill(Color.red)
-              .frame(width: 14, height: 14, alignment: .center)
-              .offset(x: 13, y: -10)
+          NavigationLink(destination: SearchableView()) {
+              ZStack {
+                  Image(systemName: "magnifyingglass")
+                      .font(.title)
+                      .foregroundColor(.black)
+              }
           }
-        }) //: BUTTON
+          //: BUTTON
+          
       } //: HSTACK
+        
     }
+    
 }
 
+
 #Preview {
-    NavigationBarView()
+    NavigationBarView(numberOfProducts: 1)
 }
