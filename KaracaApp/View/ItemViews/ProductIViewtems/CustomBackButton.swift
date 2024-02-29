@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct NavigationBarDetailView: View {
+struct CustomBackButton: View {
     // MARK: - PROPERTY
     
     @EnvironmentObject var shop: Shop
-      
+    @State private var isCardViewPresented = false
     // MARK: - BODY
     
     var body: some View {
@@ -30,17 +30,15 @@ struct NavigationBarDetailView: View {
         
         Spacer()
         
-        Button(action: {}, label: {
-          Image(systemName: "cart")
-            .font(.title)
-            .foregroundColor(.white)
-        })
+       
+       
+        
       } //: HSTACK
     }
 }
 
 #Preview {
-    NavigationBarDetailView()
+    CustomBackButton()
         .environmentObject(Shop())
         .padding()
         .background(Color.gray)

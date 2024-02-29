@@ -11,11 +11,16 @@ struct AddToCartDetailView: View {
     // MARK: - PROPERTY
     
     @EnvironmentObject var shop: Shop
+    var product : Product
     
     // MARK: - BODY
     
     var body: some View {
       Button(action: {
+          
+          
+          shop.addToCart(product: (shop.selectedProduct)!)
+          
         feedback.impactOccurred()
       }, label: {
         Spacer()
@@ -37,7 +42,7 @@ struct AddToCartDetailView: View {
 }
 
 #Preview {
-    AddToCartDetailView()
+    AddToCartDetailView(product: productData[3])
         .environmentObject(Shop())
         .padding()
 }
