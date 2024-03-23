@@ -7,12 +7,46 @@
 
 import SwiftUI
 
-struct ProfileCardVI_ew: View {
+struct ProfileCardView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+      ZStack {
+       
+        // MARK: - 3. DEPTH
+        
+          Color.cardColor3
+          .cornerRadius(40)
+          .offset(y: 12)
+        
+        // MARK: - 2. LIGHT
+        
+          Color.cardColor4
+          .cornerRadius(40)
+          .offset(y: 3)
+          .opacity(0.85)
+        
+        // MARK: - 1. SURFACE
+        
+        LinearGradient(
+          colors: [
+            .cardColor1,
+            .cardColor1],
+          startPoint: .leading,
+          endPoint: .trailing
+        )
+        .cornerRadius(40)
+      }
+    
+      .frame(width: 350, height: 180)
+      .padding()
+        
+   
     }
-}
+  }
+
 
 #Preview {
-    ProfileCardVI_ew()
+    ProfileView()
+      
+        .padding()
+       
 }
