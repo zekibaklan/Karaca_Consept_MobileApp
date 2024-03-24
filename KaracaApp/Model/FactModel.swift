@@ -6,9 +6,9 @@
 //
 
 import Foundation
-// MARK: - FACT MODEL
+// MARK: - User Comment Model
 
-struct Fact: Identifiable {
+struct userCommentModel: Identifiable {
     
   var id = UUID()
   var image: String

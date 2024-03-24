@@ -7,31 +7,31 @@
 
 import Foundation
 
-let coverFlowItems : [CoverFlowModel] = [
-CoverFlowModel(
+let coverFlowItems: [CoverFlowModel] = [
+  CoverFlowModel(
     title: "Siparişler",
     icon: "checkmark.seal.fill",
     color: .mor
-),
-CoverFlowModel(
+  ),
+  CoverFlowModel(
     title: "Favori Ürünler",
     icon: "heart.fill",
     color: .turuncu
-),
-CoverFlowModel(
+  ),
+  CoverFlowModel(
     title: "Favori Tarifler",
     icon: "fork.knife",
     color: .yesil
-),
-CoverFlowModel(
+  ),
+  CoverFlowModel(
     title: "Yorum Yaz",
     icon: "note.text.badge.plus",
     color: .sari
-),
-CoverFlowModel(
+  ),
+  CoverFlowModel(
     title: "Hakkında",
     icon: "info.circle",
     color: .kremit
-)
+  ),
 
 ]

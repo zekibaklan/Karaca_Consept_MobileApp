@@ -73,6 +73,6 @@ struct MotionAnimationView: View {
     }
 }
 #Preview {
-    KaracaView()
+    WellcomeView()
     
 }

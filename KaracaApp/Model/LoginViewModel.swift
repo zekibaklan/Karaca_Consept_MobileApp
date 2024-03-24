@@ -12,21 +12,21 @@ import AuthenticationServices
 import GoogleSignIn
 
 class LoginViewModel: ObservableObject {
-    // MARK: View Properties
+    // MARK: - View Properties
     @Published var mobileNo: String = ""
     @Published var otpCode: String = ""
     
     @Published var CLIENT_CODE: String = ""
     @Published var showOTPField: Bool = false
     
-    // MARK: Error Properties
+    // MARK: - Error Properties
     @Published var showError: Bool = false
     @Published var errorMessage: String = ""
     
-    // MARK: App Log Status
+    // MARK: - App Log Status
     @AppStorage("log_status") var logStatus: Bool = false
     
-    // MARK: Apple Sign in Properties
+    // MARK: - Apple Sign in Properties
     @Published var nonce: String = ""
     
     // MARK: Firebase API's
